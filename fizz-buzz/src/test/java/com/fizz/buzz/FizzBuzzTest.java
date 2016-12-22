@@ -14,7 +14,8 @@ public class FizzBuzzTest {
     
     @Test
     public void shouldPrintBuzz(){
-        
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertEquals("Buzz", fizzBuzz.process(10));
     }
     
     @Test
