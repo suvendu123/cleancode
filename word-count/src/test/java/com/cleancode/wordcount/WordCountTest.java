@@ -40,7 +40,7 @@ public class WordCountTest {
 	@Test
 	public void should_return_qnique_word_with_any_delimiters() {
 
-		Map<String, Integer> wordMap = wordCount.count("Hello,World,Hello", ",");
+		Map<String, Integer> wordMap = wordCount.count("Hello,World,Hello", Delimiter.COMMA);
 
 		assertEquals(2, wordMap.size());
 		assertEquals(2, wordMap.get("Hello").intValue());

@@ -6,12 +6,12 @@ import java.util.Map;
 public class WordCount {
 
 	public Map<String, Integer> count(String sentence) {
-		String[] words = sentence.split(" ");
-		return getWordsMap(words);
+		return count(sentence, Delimiter.DEFAULT);
 	}
-	
-	public Map<String, Integer> count(String sentence, String delemeter) {
-		return new  HashMap<String, Integer>();
+
+	public Map<String, Integer> count(String sentence, Delimiter delimeter) {
+		String[] words = sentence.split(delimeter.value());
+		return getWordsMap(words);
 	}
 
 	private Map<String, Integer> getWordsMap(String[] words) {
@@ -30,7 +30,5 @@ public class WordCount {
 		}
 
 	}
-
-	
 
 }
