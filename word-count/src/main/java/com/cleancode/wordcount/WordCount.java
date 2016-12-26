@@ -13,9 +13,18 @@ public class WordCount {
 	private Map<String, Integer> getWordsMap(String[] words) {
 		Map<String, Integer> wordMap = new HashMap<String, Integer>();
 		for (String word : words) {
-			wordMap.put(word, 1);
+			verifyWordOccurrence(wordMap, word);
 		}
 		return wordMap;
+	}
+
+	private void verifyWordOccurrence(Map<String, Integer> wordMap, String word) {
+		if (wordMap.containsKey(word)) {
+			wordMap.put(word, wordMap.get(word) + 1);
+		} else {
+			wordMap.put(word, 1);
+		}
+
 	}
 
 }
