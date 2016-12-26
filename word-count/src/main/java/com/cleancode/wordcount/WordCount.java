@@ -9,6 +9,10 @@ public class WordCount {
 		String[] words = sentence.split(" ");
 		return getWordsMap(words);
 	}
+	
+	public Map<String, Integer> count(String sentence, String delemeter) {
+		return new  HashMap<String, Integer>();
+	}
 
 	private Map<String, Integer> getWordsMap(String[] words) {
 		Map<String, Integer> wordMap = new HashMap<String, Integer>();
@@ -26,5 +30,7 @@ public class WordCount {
 		}
 
 	}
+
+	
 
 }
