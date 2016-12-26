@@ -5,19 +5,36 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Map;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class WordCountTest {
+	
+	private WordCount wordCount;
+	
+	@Before
+	public void setUp(){
+		wordCount = new WordCount();
+	}
 
 	@Test
 	public void should_return_two_qnique_word() {
-		WordCount wordCount = new WordCount();
 
 		Map<String, Integer> wordMap = wordCount.count("Hello World");
 
 		assertEquals(2, wordMap.size());
 		assertTrue(wordMap.containsKey("Hello"));
-		
+
+	}
+
+	@Test
+	public void should_return_qnique_word_and_count_of_occurrence() {
+
+		Map<String, Integer> wordMap = wordCount.count("Hello World Hello");
+
+		assertEquals(2, wordMap.size());
+		assertEquals(2, wordMap.get("Hello").intValue());
+
 	}
 
 }
