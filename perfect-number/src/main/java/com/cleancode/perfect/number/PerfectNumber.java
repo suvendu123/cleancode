@@ -1,20 +1,16 @@
 package com.cleancode.perfect.number;
 
+import java.util.stream.IntStream;
+
 public class PerfectNumber {
 
 	public boolean isPerfect(int inputNumber) {
 		return getSumOfFactors(inputNumber) == inputNumber;
-
 	}
 
 	private int getSumOfFactors(int inputNumber) {
-		int sum = 0;
-		for (int i = 1; i <= inputNumber / 2; i++) {
-			if (inputNumber % i == 0) {
-				sum += i;
-			}
-		}
-		return sum;
+		return IntStream.rangeClosed(1, inputNumber / 2).filter(i -> inputNumber % i == 0).sum();
+
 	}
 
 }

@@ -23,6 +23,13 @@ public class PerfectNumberTest {
     @Test
     public void should_return_false_if_not_a_perfect_number() {
         assertFalse(number.isPerfect(7));
+        assertFalse(number.isPerfect(20));
+    }
+    
+    @Test
+    public void should_return_true_more_perfect_number() {
+    	assertTrue(number.isPerfect(28));
+    	assertTrue(number.isPerfect(8128));
     }
 
 }
